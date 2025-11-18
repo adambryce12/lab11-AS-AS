@@ -1,12 +1,25 @@
 import math
-def add(a, b): a + b
 
-def sub(a, b): a - b
+def add(a, b):
+    return a + b
 
-def mul(a, b): a * b
+def sub(a, b):
+    return a - b
 
-def div(a, b): b / a # raise ZeroDivisionError if a == 0
+def mul(a, b):
+    return a * b
 
-def log(a, b): loga(b)# use math library + raise ValueError
+def div(a, b):
+    if a == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    return b / a
 
-def exp(a, b): ab
+def log(a, b):
+    if a <= 0 or a == 1:
+        raise ValueError("Invalid base for logarithm")
+    if b <= 0:
+        raise ValueError("Logarithm undefined for non-positive numbers")
+    return math.log(b, a)
+
+def exp(a, b):
+    return a ** b
